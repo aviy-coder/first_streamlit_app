@@ -1,8 +1,1 @@
-# .streamlit/secrets.toml
-[snowflake]
-user="avinash"
-password="April@2022"
-account="mx41627.ap-southeast-1.aws"
-warehouse="COMPUTE_WH"
-database="PC_RIVERY_DB"
-schema="PUBLIC"
+secrets.toml
