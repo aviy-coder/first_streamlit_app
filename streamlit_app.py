@@ -39,6 +39,8 @@ streamlit.header('Fruityvice Fruit Advice')
 fruit_Choice=streamlit.text_input('What Fruit would you like information about ?','Kiwi')
 streamlit.write('user asks for',fruit_Choice)
 
+# Import requests
+
 import requests
 fruit_Choice_response=requests.get("https://www.fruityvice.com/api/fruit/" + fruit_Choice)
 streamlit.text(fruit_Choice_response.json())
@@ -47,7 +49,7 @@ streamlit.dataframe(fruitvicy_normalize)
 
 
 # Added Snowflake Connector
-myConn=snowflake.connector.connect(**streamlit.secrets["snowflake"])
+
 
 streamlit.text("Trying to connect Snowflake connector")
 
