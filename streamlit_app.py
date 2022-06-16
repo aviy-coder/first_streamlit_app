@@ -1,3 +1,5 @@
+# streamlit_app.py
+
 import streamlit as st
 import snowflake.connector
 
@@ -17,10 +19,8 @@ def run_query(query):
         cur.execute(query)
         return cur.fetchall()
 
-rows = run_query("SELECT * from FRUIT_LOAD_LIST;")
+rows = run_query("SELECT * from mytable;")
 
 # Print results.
 for row in rows:
     st.write(f"{row[0]} has a :{row[1]}:")
-
-
