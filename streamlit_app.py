@@ -19,7 +19,7 @@ def run_query(query):
         cur.execute(query)
         return cur.fetchall()
 
-rows = run_query("SELECT * FROM FRUIT_LOAD_LIST where Fruitname='banana';")
+rows = run_query("SELECT * FROM FRUIT_LOAD_LIST;")
 
 # Print results.
 for row in rows:
