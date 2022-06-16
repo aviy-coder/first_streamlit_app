@@ -19,8 +19,8 @@ def run_query(query):
         cur.execute(query)
         return cur.fetchall()
 
-rows = run_query("SELECT * from FRUIT_LOAD_LIST;")
+rows = run_query("SELECT COUNT(*) FROM FRUIT_LOAD_LIST where Fruitname='banana';")
 
 # Print results.
 for row in rows:
-    st.write(f"{row[0]} has a :{row[1]}:")
+    st.write(row)
