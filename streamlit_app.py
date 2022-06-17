@@ -61,3 +61,11 @@ my_cur.execute("SELECT * FROM FRUIT_LOAD_LIST;")
 my_data_row = my_cur.fetchall()
 streamlit.header("FRUIT_LOAD_LIST Contains")
 streamlit.dataframe(my_data_row)
+
+
+streamlit.header("Which Fruit would you lke to add")
+Add_Fruit =requests.get("https://www.fruityvice.com/api/fruit/" + fruit_Choice)
+streamlit.text(fruit_Choice_response.json())
+fruitvicy_normalize=pandas.json_normalize(fruit_Choice_response.json())
+streamlit.dataframe(fruitvicy_normalize)
+streamlit.text("Thank you for Adding fruit")
