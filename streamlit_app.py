@@ -64,8 +64,6 @@ streamlit.dataframe(my_data_row)
 
 
 streamlit.header("Which Fruit would you lke to add")
-Add_Fruit =requests.get("https://www.fruityvice.com/api/fruit/" + fruit_Choice)
-streamlit.text(Add_Fruit.json())
-Fruit_Added=pandas.json_normalize(Add_Fruit.json())
-streamlit.dataframe(Fruit_Added)
-streamlit.text("Thank you for Adding fruit")
+fruit_Choice=streamlit.text_input('What Fruit would you like information about ?','Kiwi')
+streamlit.write('user asks for',fruit_Choice)
+streamlit.write('Thank you for adding fruit')
