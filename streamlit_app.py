@@ -20,6 +20,12 @@ fruits_selected=streamlit.multiselect("Pick Some Fruits :", list(my_fruit_list.i
 fruits_to_show=my_fruit_list.loc[fruits_selected]
 streamlit.dataframe(fruits_to_show)
 
+# create repetable code block (called funcation)
+def get_fruityvice_data(this_fruit_choice):
+    fruit_Choice_response=requests.get("https://www.fruityvice.com/api/fruit/" + fruit_Choice)
+    fruitvicy_normalize=pandas.json_normalize(fruit_Choice_response.json())
+    return.fruitvicy_normalize
+
 #New Section to display Fruityvice api response
 streamlit.header('Fruityvice Fruit Advice')
 
@@ -44,12 +50,13 @@ try:
     else: 
   
 #streamlit.write('user asks for',fruit_Choice)
-
 # Import requests
-     fruit_Choice_response=requests.get("https://www.fruityvice.com/api/fruit/" + fruit_Choice)
-     streamlit.text(fruit_Choice_response.json())
-     fruitvicy_normalize=pandas.json_normalize(fruit_Choice_response.json())
-     streamlit.dataframe(fruitvicy_normalize)
+     #fruit_Choice_response=requests.get("https://www.fruityvice.com/api/fruit/" + fruit_Choice)
+     #streamlit.text(fruit_Choice_response.json())
+     #fruitvicy_normalize=pandas.json_normalize(fruit_Choice_response.json())
+     #streamlit.dataframe(fruitvicy_normalize)
+     back_fromfuncation=get_fruityvice_data(fruit_Choice)
+     streamlit.dataframe(back_fromfuncation)
 
 except URLError as e:
   streamlit.error()
