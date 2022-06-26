@@ -70,4 +70,6 @@ AddedFruit=AddFruitFromList.set_index('Fruit')
 streamlit.header('Fruityvice Added Fruit')
 
 fruitChoice=streamlit.text_input('What Fruit would you like information about ?')
-streamlit.write('user asks for',fruitChoice)
+streamlit.write('Thanks for Adding Fruit',fruitChoice)
+
+my_cur.execute("Insert into Fruit Load List from('from stremlit')")
