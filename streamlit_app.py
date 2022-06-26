@@ -62,7 +62,7 @@ except URLError as e:
   streamlit.error()
 
 #dont run anything past here while we trouble shoot
-streamlit.stop()
+#streamlit.stop()
 
 #Snow to Streamlit connection
 
