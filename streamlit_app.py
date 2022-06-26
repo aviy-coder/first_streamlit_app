@@ -88,11 +88,12 @@ def get_fruit_load_list():
 # Add button to load the fruit
 if streamlit.button('Get fruit Load List'):
     my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-    my_data_rows = get_fruit_load_list()
-    streamlit.dataframe(my_data_rows)   
+    my_data_row = get_fruit_load_list()
+    streamlit.dataframe(my_data_row)   
 
 #streamlit.dataframe(my_data_row)
 
+streamlit.stop()
 #Add Multi Select List
 AddFruitFromList=pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 
